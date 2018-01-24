@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10unsigned"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="label" val="Result"/>
+    </tool>
+    <tool name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="width" val="5"/>
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate">
+      <a name="size" val="20"/>
+    </tool>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(140,260)" to="(170,260)"/>
+    <wire from="(140,170)" to="(390,170)"/>
+    <wire from="(140,170)" to="(140,240)"/>
+    <wire from="(170,180)" to="(170,250)"/>
+    <wire from="(140,280)" to="(230,280)"/>
+    <wire from="(170,180)" to="(390,180)"/>
+    <wire from="(170,260)" to="(230,260)"/>
+    <wire from="(360,240)" to="(390,240)"/>
+    <wire from="(140,270)" to="(140,280)"/>
+    <wire from="(390,250)" to="(390,360)"/>
+    <wire from="(240,360)" to="(390,360)"/>
+    <wire from="(150,240)" to="(150,350)"/>
+    <wire from="(160,250)" to="(160,360)"/>
+    <wire from="(160,360)" to="(210,360)"/>
+    <wire from="(150,350)" to="(200,350)"/>
+    <wire from="(170,260)" to="(170,370)"/>
+    <wire from="(140,250)" to="(160,250)"/>
+    <wire from="(140,80)" to="(410,80)"/>
+    <wire from="(140,240)" to="(150,240)"/>
+    <wire from="(160,250)" to="(170,250)"/>
+    <wire from="(140,80)" to="(140,170)"/>
+    <wire from="(260,270)" to="(360,270)"/>
+    <wire from="(170,370)" to="(210,370)"/>
+    <wire from="(360,240)" to="(360,270)"/>
+    <comp lib="6" loc="(375,527)" name="Text">
+      <a name="text" val="ALU INPUTS MUST MATCH THESE"/>
+    </comp>
+    <comp lib="6" loc="(397,571)" name="Text">
+      <a name="text" val="NICK DOUBLE CHECK THIS "/>
+    </comp>
+    <comp lib="6" loc="(74,449)" name="Text">
+      <a name="text" val="0001 logic and"/>
+    </comp>
+    <comp lib="6" loc="(523,183)" name="Text">
+      <a name="text" val="01 and"/>
+    </comp>
+    <comp lib="6" loc="(76,473)" name="Text">
+      <a name="text" val="0010 logic or"/>
+    </comp>
+    <comp lib="6" loc="(66,549)" name="Text">
+      <a name="text" val="0101 arith sub"/>
+    </comp>
+    <comp lib="6" loc="(92,409)" name="Text">
+      <a name="text" val="input"/>
+    </comp>
+    <comp lib="1" loc="(260,270)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(514,269)" name="Text">
+      <a name="text" val="00 logic"/>
+    </comp>
+    <comp lib="6" loc="(280,265)" name="Text">
+      <a name="text" val="is_arith"/>
+    </comp>
+    <comp lib="6" loc="(517,213)" name="Text">
+      <a name="text" val="11 xor"/>
+    </comp>
+    <comp lib="0" loc="(410,190)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="2"/>
+      <a name="label" val="Logic Op"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(527,100)" name="Text">
+      <a name="text" val="1 = Sub"/>
+    </comp>
+    <comp lib="0" loc="(410,260)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="6" loc="(72,595)" name="Text">
+      <a name="text" val="0110 slt"/>
+    </comp>
+    <comp lib="0" loc="(410,260)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="2"/>
+      <a name="label" val="ALU Sel"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(514,289)" name="Text">
+      <a name="text" val="01 arith"/>
+    </comp>
+    <comp lib="6" loc="(897,164)" name="Text">
+      <a name="text" val="XX01 = Sub"/>
+    </comp>
+    <comp lib="6" loc="(512,313)" name="Text">
+      <a name="text" val="11 slt"/>
+    </comp>
+    <comp lib="6" loc="(789,219)" name="Text">
+      <a name="text" val="0110 SLT"/>
+    </comp>
+    <comp lib="6" loc="(138,30)" name="Text">
+      <a name="text" val="this is ugly as balls but it works"/>
+    </comp>
+    <comp lib="6" loc="(527,84)" name="Text">
+      <a name="text" val="0 = Add"/>
+    </comp>
+    <comp lib="6" loc="(517,197)" name="Text">
+      <a name="text" val="10 or"/>
+    </comp>
+    <comp lib="0" loc="(410,190)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(120,230)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(240,360)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+      <a name="negate0" val="true"/>
+    </comp>
+    <comp lib="0" loc="(120,230)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(74,493)" name="Text">
+      <a name="text" val="0011 logix xor"/>
+    </comp>
+    <comp lib="0" loc="(410,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Arith. Op"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(679,43)" name="Text">
+      <a name="text" val="4 bit input:"/>
+    </comp>
+    <comp lib="6" loc="(897,144)" name="Text">
+      <a name="text" val="XX00 = Add"/>
+    </comp>
+    <comp lib="6" loc="(899,86)" name="Text">
+      <a name="text" val="XX11 = Xor"/>
+    </comp>
+    <comp lib="6" loc="(258,379)" name="Text">
+      <a name="text" val="is_slt"/>
+    </comp>
+    <comp lib="6" loc="(799,143)" name="Text">
+      <a name="text" val="01XX = Arith"/>
+    </comp>
+    <comp lib="6" loc="(803,43)" name="Text">
+      <a name="text" val="00XX = Logic"/>
+    </comp>
+    <comp lib="6" loc="(893,64)" name="Text">
+      <a name="text" val="XX10 = Or"/>
+    </comp>
+    <comp lib="6" loc="(899,44)" name="Text">
+      <a name="text" val="XX01 = And"/>
+    </comp>
+    <comp lib="6" loc="(72,527)" name="Text">
+      <a name="text" val="0100 arith add"/>
+    </comp>
+  </circuit>
+</project>

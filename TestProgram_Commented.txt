@@ -1,0 +1,34 @@
+Assembly Command		Machine Language Instruction						Comments
+This program takes no inputs and provides no outputs; all results are stored in registers.
+Expected final register values are listed at the bottom of this page.
+
+
+addi r1,r1,0xFFFF     001000 00001 00001 1111111111111111   2021FFFF		# R1 = 0xFFFF
+sw   r1,zero,0x02     101011 00000 00001 0000000000000010   AC010002		# Mem(0) = 0xFFFF
+addi r2,$zero,2	      001000 00000 00010 0000000000000010   20020002		# R2 = 2
+lw   r3,zero,0x02     100011 00000 00011 0000000000000010   8C030002		# R3 = 0xFFFF
+andi r4,r3,0x07       001100 00011 00100 0000000000000111   30640007		# R4 = 7
+ori  r15,r4,0x08      001101 00100 01111 0000000000001000   348F0008		# R15 = 15	or	0xF
+and  r5,r15,r2        000000 01111 00010 00101 00000 100100 1E22824			# R5 = 2
+sub  r1,r2,r5	      000000 00010 00101 00001 00000 100010 450822			# R1 = 0
+add  r2,r4,r2	      000000 00010 00100 00010 00000 100000 441020			# R2 = 9
+slt  r6,r2,r15        000000 00010 01111 00110 00000 101010 4F302A			# R6 = 1 (9 < 15)
+or   r15,r2,r5        000000 00010 00101 01111 00000 100101 457825			# R15 = 11
+xor  r4,r3,r5         000000 00011 00101 00100 00000 100110 652026			# R4 = 0xFFFD
+bne  r15,r1,next      000101 00001 01111 0000000000000001   142F0001		# jump next: (11!=0) Takes a long time to execute!
+add  r2,r2,r2																# Jumped over
+next:	
+slti r6,r2,6	      001010 00010 00110 0000000000000110   28460006		# R6 = 0 (9 > 6)
+xori r6,r6,4	      001110 00110 00110 0000000000000100   38C60004		# R6 = 4
+jump 28		      	  000010 0000000000000000000000010100   20000014		# jump to instruction 28
+add r5,r5,r5	      000000 00101 00101 00101 00000 100000 A52820			# R5 = 4
+
+
+Final Register Values:
+R1	0
+R2	9
+R3	0xFFFF
+R4	0xFFFD
+R5	4
+R6	4
+R15	11, or 0xB
